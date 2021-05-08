@@ -1,6 +1,6 @@
 # Swift MVVM
-MVVM with swiftui and combine
-View -> ViewModel -> Repository -> Datasource
+MVVM with swiftui and combine 
+View -> ViewModel -> Repository -> Datasource 
 
 ## View
 ### GithubUserView
