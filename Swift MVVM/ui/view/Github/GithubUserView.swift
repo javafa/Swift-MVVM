@@ -13,11 +13,13 @@ struct GithubUserView: View {
     @ObservedObject var viewModel = GithubUserViewModel()
     
     var body: some View {
-        NavigationView {
-            List(viewModel.users, id:\.id) {
+        VStack {
+            GithubUserTitle(viewModel: viewModel)
+                .padding(EdgeInsets(top: 10, leading: 10, bottom: 0, trailing: 15))
+            
+            List(viewModel.users, id:\._id) {
                 GithubUserItemView(user: $0)
             }
-            .navigationTitle("Github User Api")
             .onAppear {
                 self.viewModel.fetchUsers()
             }

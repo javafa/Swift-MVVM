@@ -10,15 +10,22 @@ import Combine
 
 class GithubRepository {
 
-    private var remote = GithubDatasource()
+    private var remote = RestService()
     private var local = GithubUserDAO()
     
-    func getUsers() -> AnyPublisher<[GithubUser], Never> {
-        debugPrint("GithubRepository", "getUsers()")
-        return remote.getUsers()
-            .map { $0.data }
-            .decode(type: [GithubUser].self, decoder: JSONDecoder())
-            .replaceError(with: [])
+    func getUsers() -> AnyPublisher<[GithubUser], SwitError> {
+        return remote.test.get()
+            .map {
+                return $0.value
+            }
+            .eraseToAnyPublisher()
+    }
+    
+    func postUser(_ user:GithubUserRequest) -> AnyPublisher<GithubUser, SwitError> {
+        return remote.test.post(body: user)
+            .map {
+                return $0.value
+            }
             .eraseToAnyPublisher()
     }
 }

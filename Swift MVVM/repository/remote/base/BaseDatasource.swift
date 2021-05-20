@@ -16,4 +16,5 @@ class BaseDatasource : ObservableObject {
         let full_url = "\(BaseDatasource.BASE)/\(uri)"
         return URLSession.shared.dataTaskPublisher(for: URL(string: full_url)!)
     }
+    
 }

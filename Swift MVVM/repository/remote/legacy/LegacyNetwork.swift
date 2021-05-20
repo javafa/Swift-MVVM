@@ -20,7 +20,7 @@ struct LegacyApiHandler {
     }()
     
     static func request<T: Codable>( url:String,
-          method : HTTPMethod,
+          method : Alamofire.HTTPMethod,
           parameters : Parameters? = nil,
           encoding : BaseRequest.Encoding = BaseRequest.Encoding.json,
           completion : @escaping (T) -> Void,

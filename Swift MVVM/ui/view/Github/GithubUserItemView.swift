@@ -17,10 +17,10 @@ struct GithubUserItemView: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-            Text(user.login)
+            Text(user.name)
                 .font(Spoqa.h5_18_bold)
                 .foregroundColor(Color("GRAY800"))
-            Text(user.avatar_url)
+            Text(user._id ?? "none")
                 .font(Spoqa.body2_14)
                 .foregroundColor(Color("GRAY600"))
         }

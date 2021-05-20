@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import AlamofireNetworkActivityLogger
 
 @main
 struct MainApp: App {
@@ -13,5 +14,12 @@ struct MainApp: App {
         WindowGroup {
             RootView()
         }
+    }
+    
+    init() {
+        #if DEBUG
+            NetworkActivityLogger.shared.level = .debug
+            NetworkActivityLogger.shared.startLogging()
+        #endif
     }
 }

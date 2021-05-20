@@ -9,7 +9,7 @@ import Foundation
 import Combine
 import Alamofire
 
-class GithubUserApi: APIHandler {
+class GithubUserApiLegacy: APIHandler {
     
     @Published var response: Array<GithubUser>? = nil
     @Published var isLoading = false

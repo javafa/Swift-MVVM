@@ -9,8 +9,9 @@ import SwiftUI
 import Combine
 
 class GithubDatasource : BaseDatasource {
-    func getUsers() -> URLSession.DataTaskPublisher {
-        debugPrint("GithubDatasource", "getUsers()")
-        return subscribe(uri: "users")
-    }
+    
+//    func getUsers() -> URLSession.DataTaskPublisher {
+//        debugPrint("GithubDatasource", "getUsers()")
+//        return subscribe(uri: "users")
+//    }
 }

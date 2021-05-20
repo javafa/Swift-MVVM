@@ -7,6 +7,7 @@ target 'Swift MVVM' do
 
   # Pods for Swift MVVM
   pod 'Alamofire', '~> 5.2'
+  pod 'AlamofireNetworkActivityLogger', '~> 3.4'
 
   target 'Swift MVVMTests' do
     inherit! :search_paths
